@@ -273,7 +273,6 @@ em.acc{font-style:italic;font-weight:400;color:var(--gold)}
 
 /* ═══ HERO ═══════════════════════════════════════════════════ */
 .hero{position:relative;background:var(--navy-deep);color:var(--ivory);overflow:hidden;padding-block:clamp(132px,17vh,196px) clamp(96px,13vh,150px)}
-.hero video.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;z-index:1;opacity:.92}
 .hero::before{
   content:"";position:absolute;inset:0;pointer-events:none;
   background:
@@ -945,9 +944,6 @@ em.acc{font-style:italic;font-weight:400;color:var(--gold)}
 <!-- ══════════════════ HERO ══════════════════ -->
 <!-- bg-navy-deep sınıfı ŞART: koyu zemin metin/buton renkleri o sınıfa bağlı. -->
 <section class="hero bg-navy-deep">
-  <video class="hero-bg" autoplay muted loop playsinline preload="auto" poster="assets/images/berrak-hero.webp.jpeg">
-    <source src="https://hakikatperest.github.io/berrak-kuru-temizleme/assets/images/hero-video.mp4" type="video/mp4">
-  </video>
   <div class="wrap hero-in">
 
     <div class="hero-copy intro">
@@ -1004,6 +1000,16 @@ em.acc{font-style:italic;font-weight:400;color:var(--gold)}
       </div>
     </div>
 
+  </div>
+</section>
+
+<section class="sec bg-ivory" style="padding-block:var(--sec-y) 0">
+  <div class="wrap" style="display:grid;place-items:center;">
+    <div style="width:368px;height:368px;border-radius:28px;overflow:hidden;box-shadow:var(--sh-lg);">
+      <video autoplay muted loop playsinline preload="auto" width="368" height="368" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <source src="https://hakikatperest.github.io/berrak-kuru-temizleme/assets/images/hero-video.mp4" type="video/mp4">
+      </video>
+    </div>
   </div>
 </section>
 
