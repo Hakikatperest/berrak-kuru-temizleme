@@ -175,16 +175,14 @@ em.acc{font-style:italic;font-weight:400;color:var(--gold)}
 .btn:hover{transform:translateY(-3px)}
 .btn:active{transform:translateY(-1px)}
 .btn-gold{
-  /* Parlak beyaz iç ışık plastik görünüm veriyordu; yerine dövme metal hissi
-     veren ince altın kenar + katmanlı düşük opaklıkta gölge. */
-  background:linear-gradient(180deg,var(--gold-soft) 0%,var(--gold) 100%);
-  color:#20180a;
+  background:linear-gradient(180deg,#36c265 0%,#25d366 100%);
+  color:#ffffff;
   box-shadow:inset 0 0 0 1px rgba(255,255,255,.16),
-             0 1px 2px rgba(94,68,10,.16),0 5px 12px rgba(94,68,10,.16),0 14px 30px rgba(94,68,10,.14);
+             0 1px 2px rgba(0,85,29,.18),0 5px 12px rgba(0,85,29,.16),0 14px 30px rgba(0,85,29,.14);
 }
-.btn-gold:hover{background:linear-gradient(180deg,#eed596 0%,var(--gold-soft) 100%);
+.btn-gold:hover{background:linear-gradient(180deg,#4bdb7b 0%,#2fdc7b 100%);
   box-shadow:inset 0 0 0 1px rgba(255,255,255,.22),
-             0 2px 5px rgba(94,68,10,.18),0 10px 22px rgba(94,68,10,.20),0 24px 44px rgba(94,68,10,.16)}
+             0 2px 5px rgba(0,85,29,.18),0 10px 22px rgba(0,85,29,.20),0 24px 44px rgba(0,85,29,.16)}
 .btn-gold:hover .ic{transform:translateX(3px)}
 .btn-outline{border:1px solid var(--line-gold);color:var(--ink);background:rgba(255,253,248,.5);box-shadow:var(--sh-xs)}
 .btn-outline:hover{border-color:var(--gold);background:var(--ivory);box-shadow:var(--sh-sm)}
@@ -633,14 +631,14 @@ em.acc{font-style:italic;font-weight:400;color:var(--gold)}
 .to-top{width:44px;height:44px;border-radius:50%;background:rgba(10,19,41,.80);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(230,201,119,.30);color:var(--gold-soft);display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-navy);transition:all .45s var(--ease)}
 .to-top:hover{background:var(--navy);border-color:var(--gold);transform:translateY(-3px)}
 
-.wa{position:relative;display:flex;align-items:center;gap:0;height:62px;padding:0;border-radius:999px;background:var(--navy);border:1px solid rgba(230,201,119,.42);color:var(--ivory);box-shadow:0 6px 16px rgba(3,7,18,.34),0 18px 40px rgba(3,7,18,.36);overflow:hidden;transition:all .6s var(--ease)}
-.wa i{display:flex;align-items:center;justify-content:center;width:60px;height:60px;flex:none;color:var(--gold-soft)}
+.wa{position:relative;display:flex;align-items:center;gap:0;height:62px;padding:0;border-radius:999px;background:#25d366;border:1px solid rgba(37,211,102,.42);color:#ffffff;box-shadow:0 6px 16px rgba(37,211,102,.30),0 18px 40px rgba(37,211,102,.24);overflow:hidden;transition:all .6s var(--ease)}
+.wa i{display:flex;align-items:center;justify-content:center;width:60px;height:60px;flex:none;color:#ffffff}
 .wa i .ic{width:27px;height:27px}
-.wa b{font-weight:400;font-size:13.5px;letter-spacing:.05em;white-space:nowrap;max-width:0;overflow:hidden;transition:max-width .6s var(--ease),padding .6s var(--ease);color:var(--ivory)}
-.wa:hover{background:var(--gold);border-color:var(--gold);box-shadow:0 6px 16px rgba(94,68,10,.30),0 20px 46px rgba(94,68,10,.34)}
-.wa:hover i,.wa:hover b{color:#1a1405}
+.wa b{font-weight:400;font-size:13.5px;letter-spacing:.05em;white-space:nowrap;max-width:0;overflow:hidden;transition:max-width .6s var(--ease),padding .6s var(--ease);color:#ffffff}
+.wa:hover{background:#1ebc58;border-color:#1ebc58;box-shadow:0 6px 16px rgba(30,188,88,.30),0 20px 46px rgba(30,188,88,.34)}
+.wa:hover i,.wa:hover b{color:#ffffff}
 .wa:hover b{max-width:210px;padding-right:26px}
-.wa::before{content:"";position:absolute;inset:-1px;border-radius:999px;border:1px solid var(--gold);opacity:0;animation:ring 3.6s var(--ease) infinite}
+.wa::before{content:"";position:absolute;inset:-1px;border-radius:999px;border:1px solid #25d366;opacity:0;animation:ring 3.6s var(--ease) infinite}
 @keyframes ring{0%{transform:scale(1);opacity:.55}70%,100%{transform:scale(1.42);opacity:0}}
 
 /* ═══ SCROLL REVEAL ══════════════════════════════════════════
