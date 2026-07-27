@@ -206,9 +206,9 @@ em.acc{font-style:italic;font-weight:400;color:var(--gold)}
 /* ── görsel yükleme (LQIP bulanık geçiş) ───────────────────── */
 .ph{position:relative;overflow:hidden;background-size:cover;background-position:center;isolation:isolate}
 .ph>img{width:100%;height:100%;object-fit:cover}
-/* Görseli gizleyip yumuşak açmak yalnızca JS varken. Ayrıca 4 saniyelik
+/* Görseli gizleyip yumuşak açmak yalnızca JS varken. Ayrıca 2 saniyelik
    emniyet animasyonu: script bir yerde patlasa bile görseller görünür olur. */
-.js .ph>img{opacity:0;transition:opacity .85s var(--ease);animation:phSafety .01s linear 4s forwards}
+.js .ph>img{opacity:0;transition:opacity .85s var(--ease);animation:phSafety .01s linear 2s forwards}
 .js .ph>img.ok{opacity:1}
 @keyframes phSafety{to{opacity:1}}
 .ph::after{
@@ -660,8 +660,9 @@ em.acc{font-style:italic;font-weight:400;color:var(--gold)}
   .nav{display:none}
   .burger{display:flex}
   .hero-in{grid-template-columns:1fr;gap:56px}
-  .hero-art{max-width:540px;margin-inline:auto;width:100%}
-  .hero-art figure, .art-frame, .art-chip{will-change:auto;transform:translateZ(0);-webkit-backface-visibility:hidden;backface-visibility:hidden}
+  .hero-art{max-width:540px;margin-inline:auto;width:100%;perspective:none}
+  .hero-art figure, .art-frame, .art-chip, .hero-copy, .hero-copy *{will-change:auto!important;transform:none!important;-webkit-transform:none!important;backface-visibility:hidden!important;-webkit-backface-visibility:hidden!important}
+  .hero-copy .intro>*{opacity:1!important;animation:none!important;transition:none!important}
   .why-grid,.con-grid,.rev-top,.faq-grid{grid-template-columns:1fr}
   .faq-side{position:static}
   .why-art{max-width:520px;aspect-ratio:1/1.05}
@@ -976,19 +977,19 @@ em.acc{font-style:italic;font-weight:400;color:var(--gold)}
       <span class="art-frame" style="--ad:.5s" data-depth="6"></span>
 
       <figure class="art-shirts ph lq-hero-shirts" style="--ad:.72s" data-depth="26">
-        <img src="assets/images/berrak1.webp.jpeg" width="760" height="570" alt="Kuru temizlemeden çıkmış, koruma poşetleriyle askıya asılmış gömlekler" loading="eager" decoding="async">
+        <img src="assets/images/berrak1.webp.jpeg" width="760" height="570" alt="Kuru temizlemeden çıkmış, koruma poşetleriyle askıya asılmış gömlekler" loading="eager" fetchpriority="high" decoding="sync">
       </figure>
 
       <figure class="art-suit ph lq-hero-suit" style="--ad:.58s" data-depth="14">
-        <img src="assets/images/berrak-hero.webp.jpeg" width="900" height="1200" alt="Manken üzerinde camel rengi takım elbise ceketi ve lacivert kravat detayı" loading="eager" fetchpriority="high" decoding="async">
+        <img src="assets/images/berrak-hero.webp.jpeg" width="900" height="1200" alt="Manken üzerinde camel rengi takım elbise ceketi ve lacivert kravat detayı" loading="eager" fetchpriority="high" decoding="sync">
       </figure>
 
       <figure class="art-dress ph lq-hero-dress float-a" style="--ad:.86s" data-depth="34">
-        <img src="assets/images/berrak2.webp.jpeg" width="760" height="950" alt="Pencere ışığında dantel işlemeli gelinlik" loading="eager" decoding="async">
+        <img src="assets/images/berrak2.webp.jpeg" width="760" height="950" alt="Pencere ışığında dantel işlemeli gelinlik" loading="eager" fetchpriority="high" decoding="sync">
       </figure>
 
       <figure class="art-needle ph lq-hero-needle float-b" style="--ad:1s" data-depth="46">
-        <img src="assets/images/berrak3.webp.jpeg" width="620" height="620" alt="Dikiş makinesi iğnesi ve baskı ayağının yakın çekimi" loading="eager" decoding="async">
+        <img src="assets/images/berrak3.webp.jpeg" width="620" height="620" alt="Dikiş makinesi iğnesi ve baskı ayağının yakın çekimi" loading="eager" fetchpriority="high" decoding="sync">
       </figure>
 
       <div class="art-chip chip-2 float-a" style="--ad:1.2s" data-depth="60">
