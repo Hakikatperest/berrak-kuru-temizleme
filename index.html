@@ -678,8 +678,12 @@ em.acc{font-style:italic;font-weight:400;color:var(--gold)}
   .burger{display:flex}
   .hero-in{grid-template-columns:1fr;gap:56px}
   .hero-art{max-width:540px;margin-inline:auto;width:100%;perspective:none}
-  .hero-art figure, .art-frame, .art-chip, .hero-copy, .hero-copy *{will-change:auto!important;transform:none!important;-webkit-transform:none!important;backface-visibility:hidden!important;-webkit-backface-visibility:hidden!important}
-  .hero-copy .intro>*{opacity:1!important;animation:none!important;transition:none!important}
+  .hero-art figure, .art-frame, .art-chip, .hero-copy, .hero-copy *{will-change:auto!important;transform:none!important;-webkit-transform:none!important}
+  /* hero-copy ve intro aynı elemanda: alt eleman seçicisi eşleşmez.
+     mobilde görünürlük animasyonun bitiş durumuna bırakılmamalı — katman
+     yeniden çizilince kayboluyordu */
+  .hero-copy.intro>*{opacity:1!important;animation:none!important;transition:none!important}
+  .hero-art figure,.art-frame,.art-chip{opacity:1!important}
   .why-grid,.con-grid,.rev-top,.faq-grid{grid-template-columns:1fr}
   .faq-side{position:static}
   .why-art{max-width:520px;aspect-ratio:1/1.05}
