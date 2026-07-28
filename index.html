@@ -295,7 +295,60 @@ em.acc{font-style:italic;font-weight:400;color:var(--gold)}
 .hero h1{margin-bottom:30px}
 .hero .lede{margin-bottom:40px;max-width:48ch}
 .hero-btns{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:38px}
-.hero-note{display:flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.02em;color:var(--gold-soft);margin-bottom:44px}
+/* ── servis bölgeleri: 3B kabartma rozetler ──────────────────
+   Derinlik iki katmandan gelir: (1) rotateX ile hafif eğim + perspektif,
+   (2) üstten aydınlık / alttan karanlık inset gölgeler. İkincisi
+   dönüşümlerin kapatıldığı mobilde de kabartma hissini korur.          */
+.areas{margin-bottom:44px;perspective:820px}
+.areas-t{
+  display:flex;align-items:center;gap:10px;margin-bottom:15px;
+  font-size:10.5px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--gold-soft);
+}
+.areas-t .ic{color:var(--gold)}
+.areas-t::after{content:"";height:1px;flex:1;max-width:74px;background:linear-gradient(90deg,rgba(230,201,119,.45),transparent)}
+.areas-list{display:flex;flex-wrap:wrap;gap:11px;transform-style:preserve-3d}
+.areas-list li{
+  position:relative;
+  display:flex;align-items:center;gap:10px;
+  padding:12px 19px;border-radius:13px;
+  font-size:13.5px;letter-spacing:.055em;color:var(--ivory);white-space:nowrap;
+  background:
+    linear-gradient(180deg,rgba(255,253,248,.13) 0%,rgba(255,253,248,.028) 46%,rgba(3,8,20,.34) 100%),
+    linear-gradient(180deg,#16264a 0%,#0c1830 100%);
+  border:1px solid rgba(230,201,119,.26);
+  box-shadow:
+    inset 0 1px 0 rgba(255,253,248,.28),
+    inset 0 -2px 5px rgba(2,5,14,.55),
+    0 1px 1px rgba(2,5,14,.42),
+    0 5px 10px rgba(2,5,14,.34),
+    0 14px 26px rgba(2,5,14,.30);
+  transform:rotateX(9deg);transform-origin:50% 100%;
+  transition:transform .55s var(--ease),box-shadow .55s var(--ease),border-color .4s ease;
+}
+/* altın bilye — üstten gelen ışığın yakalandığı nokta */
+.areas-list li i{
+  width:6px;height:6px;border-radius:50%;flex:none;
+  background:radial-gradient(circle at 32% 28%,#f7e4ac 0%,var(--gold) 58%,#8a6722 100%);
+  box-shadow:0 0 0 1px rgba(230,201,119,.20),0 1px 2px rgba(2,5,14,.65);
+}
+/* hover'da geçen altın parıltı — dönüşüm gerektirmez */
+.areas-list li::after{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(118deg,transparent 30%,rgba(230,201,119,.22) 48%,transparent 66%);
+  opacity:0;transition:opacity .5s ease;
+}
+.areas-list li:hover{
+  transform:rotateX(0deg) translateY(-4px);
+  border-color:rgba(230,201,119,.55);
+  box-shadow:
+    inset 0 1px 0 rgba(255,253,248,.36),
+    inset 0 -2px 5px rgba(2,5,14,.5),
+    0 2px 4px rgba(2,5,14,.42),
+    0 12px 24px rgba(2,5,14,.40),
+    0 28px 48px rgba(2,5,14,.34);
+}
+.areas-list li:hover::after{opacity:1}
 .hero-trust{display:flex;flex-wrap:wrap;gap:12px 34px;padding-top:30px;border-top:1px solid var(--line-navy)}
 .hero-trust li{display:flex;align-items:center;gap:11px;font-size:13px;color:var(--on-navy)}
 .hero-trust li>.ic{color:var(--gold)}
@@ -778,7 +831,12 @@ em.acc{font-style:italic;font-weight:400;color:var(--gold)}
     "addressCountry":"TR"
   },
   "telephone":"+905373524279",
-  "areaServed":"Esenyurt, İstanbul",
+  "areaServed":[
+    {"@type":"Place","name":"Esenyurt, İstanbul"},
+    {"@type":"Place","name":"Beylikdüzü, İstanbul"},
+    {"@type":"Place","name":"Bahçeşehir, İstanbul"},
+    {"@type":"Place","name":"Avcılar, İstanbul"}
+  ],
   "geo":{"@type":"GeoCoordinates","latitude":41.0237241,"longitude":28.6931340},
   "hasMap":"https://maps.google.com/?cid=17883061336777066889",
   "sameAs":["https://www.instagram.com/berrakterzi.kurutemizleme"],
@@ -807,10 +865,10 @@ em.acc{font-style:italic;font-weight:400;color:var(--gold)}
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Esenyurt dışına da servis veriyor musunuz?",
+      "name": "Hangi bölgelere servis veriyorsunuz?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ücretsiz alım–teslim hizmetimiz Esenyurt içindir. Çevre ilçelerden yazarsanız durumu birlikte değerlendirir, size en uygun yolu buluruz."
+        "text": "Servis bölgelerimiz Esenyurt, Beylikdüzü, Bahçeşehir ve Avcılar. Esenyurt içinde alım–teslim ücretsizdir; diğer bölgeler için yazarsanız durumu birlikte değerlendirir, size en uygun yolu buluruz."
       }
     },
     {
@@ -969,9 +1027,15 @@ em.acc{font-style:italic;font-weight:400;color:var(--gold)}
         </a>
       </div>
 
-      <p class="hero-note" style="--ad:.42s">
-        <svg class="ic s"><use href="#i-van"/></svg>Esenyurt içinde alım ve teslim ücretsizdir.
-      </p>
+      <div class="areas" style="--ad:.42s">
+        <p class="areas-t"><svg class="ic s"><use href="#i-van"/></svg>Servis Bölgelerimiz</p>
+        <ul class="areas-list">
+          <li><i aria-hidden="true"></i>Esenyurt</li>
+          <li><i aria-hidden="true"></i>Beylikdüzü</li>
+          <li><i aria-hidden="true"></i>Bahçeşehir</li>
+          <li><i aria-hidden="true"></i>Avcılar</li>
+        </ul>
+      </div>
 
       <ul class="hero-trust" style="--ad:.5s">
         <li><span class="stars" aria-hidden="true"><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg><svg class="ic"><use href="#i-star"/></svg></span>Google'da 5,0</li>
@@ -1358,8 +1422,8 @@ em.acc{font-style:italic;font-weight:400;color:var(--gold)}
 
     <div class="faq-list" data-rv="right">
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false"><span class="pm" aria-hidden="true"></span>Esenyurt dışına da servis veriyor musunuz?</button>
-        <div class="faq-a"><div><p>Ücretsiz alım–teslim hizmetimiz Esenyurt içindir. Çevre ilçelerden yazarsanız durumu birlikte değerlendirir, size en uygun yolu buluruz.</p></div></div>
+        <button class="faq-q" aria-expanded="false"><span class="pm" aria-hidden="true"></span>Hangi bölgelere servis veriyorsunuz?</button>
+        <div class="faq-a"><div><p>Servis bölgelerimiz Esenyurt, Beylikdüzü, Bahçeşehir ve Avcılar. Esenyurt içinde alım–teslim ücretsizdir; diğer bölgeler için yazarsanız durumu birlikte değerlendirir, size en uygun yolu buluruz.</p></div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false"><span class="pm" aria-hidden="true"></span>Gelinliğimi düğünden ne kadar sonra getirmeliyim?</button>
