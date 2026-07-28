@@ -504,11 +504,8 @@ em.acc{font-style:italic;font-weight:400;color:var(--gold)}
 }
 @media (max-width:760px){ .gal-film{aspect-ratio:4/3} }
 
-/* iki zanaat — yan yana dikey videolar */
-.craft-duo{
-  display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,2.2vw,28px);
-  max-width:760px;margin:clamp(30px,3.4vw,46px) auto 0;
-}
+/* bölüm başlığının üstünde duran tekil dikey video */
+.craft-solo{max-width:318px;margin:0 auto clamp(34px,4vw,54px)}
 .craft-ph{
   position:relative;aspect-ratio:9/16;overflow:hidden;
   border-radius:var(--r-xl);background:var(--navy-deep);
@@ -545,9 +542,8 @@ em.acc{font-style:italic;font-weight:400;color:var(--gold)}
   text-transform:uppercase;color:var(--ink-50);text-align:center;
 }
 .craft figcaption b{font-weight:400;color:var(--gold)}
-@media (max-width:560px){
-  .craft-duo{grid-template-columns:1fr;max-width:340px}
-}
+.bg-navy .craft figcaption,.bg-navy-deep .craft figcaption{color:var(--on-navy-dim)}
+.bg-navy .craft figcaption b{color:var(--gold-soft)}
 
 /* ═══ YORUMLAR ═══════════════════════════════════════════════ */
 .rev-top{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(34px,5vw,80px);align-items:end}
@@ -1178,6 +1174,15 @@ em.acc{font-style:italic;font-weight:400;color:var(--gold)}
 <!-- ══════════════════ ÖNCESİ / SONRASI ══════════════════ -->
 <section class="sec bg-navy" id="fark">
   <div class="wrap">
+    <figure class="craft craft-solo" data-rv="scale">
+      <div class="craft-ph rot90">
+        <video autoplay muted loop playsinline preload="metadata" aria-label="Berrak dükkânının sokaktan görünümü">
+          <source src="assets/images/berrak-kurutemizleme.mp4" type="video/mp4">
+        </video>
+      </div>
+      <figcaption>Dükkânın önü — 270. Sokak</figcaption>
+    </figure>
+
     <div class="sec-head center" data-rv>
       <p class="eyebrow">Öncesi &amp; Sonrası</p>
       <h2 class="h-lg">Farkı anlatmaya<br><em class="acc">gerek</em> kalmaz.</h2>
@@ -1231,6 +1236,16 @@ em.acc{font-style:italic;font-weight:400;color:var(--gold)}
 <!-- ══════════════════ SÜREÇ ══════════════════ -->
 <section class="sec bg-ivory">
   <div class="wrap">
+    <figure class="craft craft-solo" data-rv="scale">
+      <div class="craft-ph">
+        <video loop playsinline preload="metadata" aria-label="Berrak tanıtım filmi — dükkân ve alım–teslim aracı">
+          <source src="assets/images/berrak-terzi.mp4" type="video/mp4">
+        </video>
+        <button class="craft-play" type="button" aria-label="Tanıtım filmini sesli oynat"><i aria-hidden="true"></i></button>
+      </div>
+      <figcaption>Kapıdan kapıya — <b>sesli izleyin</b></figcaption>
+    </figure>
+
     <div class="sec-head center" data-rv>
       <p class="eyebrow center">Nasıl İşliyor</p>
       <h2 class="h-lg">Dört adım,<br>tek <em class="acc">telefon</em>.</h2>
@@ -1279,27 +1294,6 @@ em.acc{font-style:italic;font-weight:400;color:var(--gold)}
       </video>
       <figcaption>Atölyeden bir gün — İncirtepe Mahallesi</figcaption>
     </figure>
-
-    <div class="craft-duo" data-rv>
-      <figure class="craft">
-        <div class="craft-ph rot90">
-          <video autoplay muted loop playsinline preload="metadata" aria-label="Berrak dükkânının sokaktan görünümü">
-            <source src="assets/images/berrak-kurutemizleme.mp4" type="video/mp4">
-          </video>
-        </div>
-        <figcaption>Dükkânın önü — 270. Sokak</figcaption>
-      </figure>
-
-      <figure class="craft">
-        <div class="craft-ph">
-          <video loop playsinline preload="metadata" aria-label="Berrak tanıtım filmi — dükkân ve alım–teslim aracı">
-            <source src="assets/images/berrak-terzi.mp4" type="video/mp4">
-          </video>
-          <button class="craft-play" type="button" aria-label="Terzi videosunu sesli oynat"><i aria-hidden="true"></i></button>
-        </div>
-        <figcaption>Kapıdan kapıya — <b>sesli izleyin</b></figcaption>
-      </figure>
-    </div>
   </div>
 </section>
 
