@@ -423,7 +423,7 @@ em.acc{font-style:italic;font-weight:400;color:var(--gold)}
 .pillar p{font-size:15px;line-height:1.8;color:var(--ink-70)}
 
 /* ═══ ÖNCE / SONRA ═══════════════════════════════════════════ */
-.ba-tabs{display:flex;flex-wrap:wrap;gap:9px;margin-top:38px}
+.ba-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-top:38px}
 .ba-tab{
   padding:11px 21px;border-radius:999px;border:1px solid var(--line-navy);
   font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-navy);
@@ -1085,13 +1085,13 @@ em.acc{font-style:italic;font-weight:400;color:var(--gold)}
   <div class="wrap why-grid">
 
     <div class="why-art" data-rv="left">
-      <div class="main ph lq-why-atolye">
-        <img src="assets/images/berrak4.webp.jpeg" width="1040" height="1300" alt="Bakımı yapılmış, benekli uzun kürk manto" loading="lazy" decoding="async">
-      </div>
-      <div class="sub ph">
+      <div class="main ph">
         <video autoplay muted loop playsinline preload="metadata" width="720" height="720" aria-label="Berrak atölyesinden kısa bir görüntü">
           <source src="assets/images/berrak1.mp4" type="video/mp4">
         </video>
+      </div>
+      <div class="sub ph lq-why-atolye">
+        <img src="assets/images/berrak4.webp.jpeg" width="1040" height="1300" alt="Bakımı yapılmış, benekli uzun kürk manto" loading="lazy" decoding="async">
       </div>
       <div class="band">
         <svg class="ic" aria-hidden="true" style="color:var(--gold);margin-bottom:12px"><use href="#i-machine"/></svg>
@@ -1145,10 +1145,11 @@ em.acc{font-style:italic;font-weight:400;color:var(--gold)}
 <!-- ══════════════════ ÖNCESİ / SONRASI ══════════════════ -->
 <section class="sec bg-navy" id="fark">
   <div class="wrap">
-    <div class="sec-head" data-rv>
+    <div class="sec-head center" data-rv>
       <p class="eyebrow">Öncesi &amp; Sonrası</p>
       <h2 class="h-lg">Farkı anlatmaya<br><em class="acc">gerek</em> kalmaz.</h2>
       <p class="lede">Çizgiyi tutup sürükleyin. Ayakkabı, mont ve gelinlik — hepsi ilk günkü temizliğinde.</p>
+    </div>
 
     <div class="ba-tabs" role="tablist" aria-label="Öncesi sonrası örnekleri" data-rv>
       <button class="ba-tab" role="tab" aria-selected="true" aria-controls="ba-1" id="tab-1">Ayakkabı Temizliği</button>
